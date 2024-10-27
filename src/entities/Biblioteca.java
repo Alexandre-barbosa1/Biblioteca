@@ -17,10 +17,12 @@ public class Biblioteca {
 		for (Livro l : livros) {
 			if (l.getTitulo().equalsIgnoreCase(titulo)) {
 				livros.remove(l);
+				System.out.println("livro removido");
 				return true;
 			}
 
 		}
+		System.out.println("livro nao encontrado");
 		return false;
 
 	}
@@ -28,27 +30,16 @@ public class Biblioteca {
 		for (Livro l : livros) {
 			if (l.getTitulo().equalsIgnoreCase(titulo)) {
 				livros.remove(l);
+				System.out.println("livro emprestado");
 				return true;
 			}
 
 		}
+		System.out.println("livro nao encontrado");
 		return false;
 		
 	}
-	public boolean devolver (String titulo) {
-		for (Livro l : livros) {
-			if (l.getTitulo().equalsIgnoreCase(titulo)) {
-				System.out.println("livro nao foi emprestado");
-				return true;
-			} else {
-				livros.add(l);
-			}
 
-		}
-
-		return false;
-		
-	}
 	public void percorrer() {
 		for (Livro list : livros) {
 			System.out.println(list.getTitulo() + "; " + sdf.format(list.getAnopubli()));

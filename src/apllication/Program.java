@@ -13,7 +13,7 @@ public class Program {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		String titulo="";
+		String titulo = "";
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			System.out.println("BIBLIOTECA: ");
@@ -36,26 +36,25 @@ public class Program {
 			String r = sc.nextLine();
 			if (!(r.equals("nao"))) {
 				System.out.println("informe o nome do livro que deseja remover: ");
-				 titulo = sc.next();
+				titulo = sc.next();
 				biblioteca.remover(titulo);
 			}
+			sc.nextLine();
 			System.out.println("deseja emprestar um livro da biblioteca? sim/nao");
 			String e = sc.nextLine();
 			if (!(e.equals("nao"))) {
 				System.out.println("informe o nome do livro que deseja emprestar: ");
 				titulo = sc.next();
 				biblioteca.emprestar(titulo);
-				}
-			
-	
+			}
+
 			System.out.println("atualização: ");
 			biblioteca.percorrer();
 			sc.nextLine();
 		} catch (ParseException e) {
-			System.out.println("erro "+e.getMessage());
-		}
-		catch (InputMismatchException e) {
-			System.out.println("erro "+e.getMessage());
+			System.out.println("erro " + e.getMessage());
+		} catch (InputMismatchException e) {
+			System.out.println("erro " + e.getMessage());
 		}
 		sc.close();
 
